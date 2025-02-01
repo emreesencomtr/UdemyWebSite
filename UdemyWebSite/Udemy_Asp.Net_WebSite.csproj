@@ -53,6 +53,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -335,15 +336,44 @@
     <Content Include="Dosyalar\sidebar\style4.css" />
     <Content Include="Dosyalar\sidebar\style5.css" />
     <Content Include="Dosyalar\StyleSheet2.css" />
+    <Content Include="OgrenciEkle.aspx" />
+    <Content Include="OgrenciGuncelle.aspx" />
+    <Content Include="OgrenciSil.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OgrenciEkle.aspx.cs">
+      <DependentUpon>OgrenciEkle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OgrenciEkle.aspx.designer.cs">
+      <DependentUpon>OgrenciEkle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OgrenciGuncelle.aspx.cs">
+      <DependentUpon>OgrenciGuncelle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OgrenciGuncelle.aspx.designer.cs">
+      <DependentUpon>OgrenciGuncelle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OgrenciSil.aspx.cs">
+      <DependentUpon>OgrenciSil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OgrenciSil.aspx.designer.cs">
+      <DependentUpon>OgrenciSil.aspx</DependentUpon>
     </Compile>
     <Compile Include="Ogretmen.Master.cs">
       <DependentUpon>Ogretmen.Master</DependentUpon>
@@ -451,6 +481,17 @@
     <Content Include="Dosyalar\bootstrap-3.3.7\package.json" />
     <Content Include="Dosyalar\bootstrap-3.3.7\README.md" />
     <Content Include="Dosyalar\bootstrap-3.3.7\_config.yml" />
+    <Content Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Content>
+    <None Include="DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Content>
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

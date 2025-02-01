@@ -39,15 +39,17 @@
                         Öğrenci Listesi
                     </a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
+
                         <li>
-                            <a href="#">Öğrenci Ekle</a>
+                            <a href="Default.aspx"><i class="glyphicon glyphicon-list-alt"></i>Öğrenci Listesi</a>
                         </li>
                         <li>
-                            <a href="#">Öğrenci Bul</a>
+                            <a href="OgrenciEkle.aspx"><i class="glyphicon glyphicon-ok"></i>Öğrenci Ekle</a>
                         </li>
                         <li>
-                            <a href="#">Öğrenci Sil</a>
+                            <a href="#"><i class="glyphicon glyphicon-search"></i>Öğrenci Bul</a>
                         </li>
+
                     </ul>
                 </li>
                 <li>
