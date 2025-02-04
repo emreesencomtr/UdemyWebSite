@@ -19,7 +19,7 @@
             <textarea id="TextArea1" cols="20" rows="6" class="form-control" runat="server"></textarea>
         </div>
 
-        <asp:Button ID="Button1" runat="server" CssClass="btn btn-success" Text="Oluştur"/>
+        <asp:Button ID="Button1" runat="server" CssClass="btn btn-success" Text="Güncelle" OnClick="Button1_Click"/>
         <br />
     </form>
 
