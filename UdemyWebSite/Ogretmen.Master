@@ -57,12 +57,26 @@
                         <i class="fas fa-briefcase"></i>
                         Dersler
                     </a>
-                    <a href="#">
-                        <i class="fas fa-paper-plane"></i>
-                        Mesajlar
+                    <li class="active">
+                        <a href="#homeSubmenu3" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                            <i class="fas fa-paper-plane"></i>
+                            Mesajlar
                     </a>
+                        <ul class="collapse list-unstyled" id="homeSubmenu3">
 
-                </li>
+                            <li>
+                                <a href="GelenMesajlar.aspx"><i class="glyphicon glyphicon-download"></i>Gelen Mesajlar</a>
+                            </li>
+                            <li>
+                                <a href="GidenMesajlar.aspx"><i class="glyphicon glyphicon-upload"></i>Giden Mesajlar</a>
+                            </li>
+                            <li>
+                                <a href="MesajYaz.aspx"><i class="glyphicon glyphicon-edit"></i>Mesaj Oluştur</a>
+                            </li>
+
+                        </ul>
+
+                    </li>
 
                 <li class="active">
                     <a href="#homeSubmenu2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
@@ -116,8 +130,8 @@
 
                 <li>
                     <a href="#">
-                        <i class="glyphicon glyphicon-wrench"></i>
-                        Ayarlar
+                        <i class="glyphicon glyphicon-log-out"></i>
+                        Çıkış Yap
      </a>
                 </li>
             </ul>

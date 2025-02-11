@@ -8,9 +8,9 @@
         <table class="table table table-bordered">
             <tr>
                 <td>
-                    <asp:Chart ID="Chart1" runat="server" Width="500px">
+                    <asp:Chart ID="Chart1" runat="server" Width="500px" OnLoad="Chart1_Load">
                         <Series>
-                            <asp:Series Name="Series1">
+                            <asp:Series Name="DersAd">
                             </asp:Series>
                         </Series>
                         <ChartAreas>
@@ -22,7 +22,7 @@
                 <td>
                     <asp:Chart ID="Chart2" runat="server" Width="500px">
                         <Series>
-                            <asp:Series Name="Series1">
+                            <asp:Series Name="Cinsiyet" ChartType="Pie" LegendText="#LEGENDTEXT">
                             </asp:Series>
                         </Series>
                         <ChartAreas>
@@ -36,7 +36,7 @@
                 <td>
                     <asp:Chart ID="Chart3" runat="server" Width="500px">
                         <Series>
-                            <asp:Series Name="Series1">
+                            <asp:Series Name="Notlar" ChartType="Line" IsVisibleInLegend="False">
                             </asp:Series>
                         </Series>
                         <ChartAreas>
@@ -48,7 +48,7 @@
                 <td>
                     <asp:Chart ID="Chart4" runat="server" Width="500px">
                         <Series>
-                            <asp:Series Name="Series1">
+                            <asp:Series Name="Dersler" ChartType="StackedBar" YValuesPerPoint="4">
                             </asp:Series>
                         </Series>
                         <ChartAreas>
@@ -56,6 +56,7 @@
                             </asp:ChartArea>
                         </ChartAreas>
                     </asp:Chart>
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
                 </td>
             </tr>
         </table>
