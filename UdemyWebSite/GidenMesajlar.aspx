@@ -1,15 +1,13 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Ogretmen.Master" AutoEventWireup="true" CodeBehind="GelenMesajlar.aspx.cs" Inherits="UdemyWebSite.GelenMesajlar" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Ogretmen.Master" AutoEventWireup="true" CodeBehind="GidenMesajlar.aspx.cs" Inherits="UdemyWebSite.GidenMesajlar" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
-
-
     <table class="table table table-bordered">
         <thead class="thead-light">
             <tr>
                 <th scope="col">ID</th>
-                <th scope="col">GÖNDEREN</th>
+                <th scope="col">ALICI</th>
                 <th scope="col">BAŞLIK</th>
                 <th scope="col">İÇERİK</th>
                 <th scope="col">TARİH</th>
@@ -17,28 +15,28 @@
 
             </tr>
         </thead>
-        <tbody>
-            <asp:Repeater ID="Repeater1" runat="server">
+    <tbody>
+        <asp:Repeater ID="Repeater1" runat="server">
 
-                <ItemTemplate>
+            <ItemTemplate>
 
-                    <tr>
-                        <td><%#Eval("MESAJID")%></td>
-                        <td><%#Eval("GONDEREN")%></td>
-                        <td><%#Eval("BASLIK")%></td>
-                        <td><%#Eval("ICERIK")%></td>
-                        <td><%#Eval("TARIH")%></td>
+                <tr>
+                    <td><%#Eval("MESAJID")%></td>
+                    <td><%#Eval("ALICI")%></td>
+                    <td><%#Eval("BASLIK")%></td>
+                    <td><%#Eval("ICERIK")%></td>
+                    <td><%#Eval("TARIH")%></td>
 
-                        <%--<td>
+                    <%--<td>
                             <asp:HyperLink ID="HyperLink1" NavigateUrl='<%#"~/DuyuruSil.aspx?DUYURUID="+Eval("DUYURUID") %>' runat="server" CssClass=" btn btn-danger">SİL</asp:HyperLink>
                             <asp:HyperLink ID="HyperLink2" NavigateUrl='<%#"~/DuyuruGuncelle.aspx?DUYURUID="+Eval("DUYURUID") %>' runat="server" CssClass="btn btn-info">GÜNCELLE</asp:HyperLink>
                         </td>--%>
-                    </tr>
+                </tr>
 
-                </ItemTemplate>
+            </ItemTemplate>
 
-            </asp:Repeater>
+        </asp:Repeater>
 
-        </tbody>
+    </tbody>
     </table>
 </asp:Content>
