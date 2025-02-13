@@ -182,6 +182,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin.aspx" />
+    <Content Include="avatar.png" />
     <Content Include="Default.aspx" />
     <Content Include="DersEkle.aspx" />
     <Content Include="DersListesi.aspx" />
@@ -461,12 +462,16 @@
     <Content Include="GelenMesajlar.aspx" />
     <Content Include="GidenMesajlar.aspx" />
     <Content Include="Grafikler.aspx" />
+    <Content Include="hacker.png" />
     <Content Include="MesajOlustur.aspx" />
     <Content Include="NotGuncelle.aspx" />
     <Content Include="NotListesi.aspx" />
+    <Content Include="OgrenciDefault.aspx" />
     <Content Include="OgrenciEkle.aspx" />
     <Content Include="OgrenciGuncelle.aspx" />
     <Content Include="OgrenciSil.aspx" />
+    <Content Include="pexels-suzyhazelwood-1629236.jpg" />
+    <Content Include="Dosyalar\StyleSheet1.css" />
     <Content Include="Web.config" />
     <Content Include="İstatistikler.aspx" />
   </ItemGroup>
@@ -587,6 +592,20 @@
     </Compile>
     <Compile Include="NotListesi.aspx.designer.cs">
       <DependentUpon>NotListesi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ogrenci.Master.cs">
+      <DependentUpon>Ogrenci.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ogrenci.Master.designer.cs">
+      <DependentUpon>Ogrenci.Master</DependentUpon>
+    </Compile>
+    <Compile Include="OgrenciDefault.aspx.cs">
+      <DependentUpon>OgrenciDefault.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OgrenciDefault.aspx.designer.cs">
+      <DependentUpon>OgrenciDefault.aspx</DependentUpon>
     </Compile>
     <Compile Include="OgrenciEkle.aspx.cs">
       <DependentUpon>OgrenciEkle.aspx</DependentUpon>
@@ -733,6 +752,7 @@
     <Content Include="DataSet1.xss">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Content>
+    <Content Include="Ogrenci.Master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
