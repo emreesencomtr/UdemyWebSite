@@ -40,7 +40,7 @@
 
 
         </div>
-        <asp:Button ID="Button1" runat="server" CssClass="btn btn-primary" Text="Güncelle" OnClick="Button1_Click" />
+        <asp:Button ID="Button1" runat="server" CssClass="btn btn-primary" Text="Şifre Değiştir" OnClick="Button1_Click" />
 
 
     </form>

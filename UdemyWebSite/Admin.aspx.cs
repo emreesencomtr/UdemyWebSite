@@ -18,7 +18,20 @@ namespace UdemyWebSite
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Default.aspx");
+            baglanti.Open();
+            SqlCommand komut = new SqlCommand("Select * from TBLOGRENCILER Where Numara=@p1 and OGRSIFRE=@p2", baglanti);
+            komut.Parameters.AddWithValue("@p1", TxtNumara.Text);
+            komut.Parameters.AddWithValue("@p2", TxtSifre.Text);
+            SqlDataReader dr = komut.ExecuteReader();
+            if (dr.Read())
+            {
+                Response.Redirect("OgrenciDefault.aspx?Numara="+ TxtNumara.Text);
+            }
+            else
+            {
+                TxtSifre.Text = "Hatalı şifre girişi yaptınız!";
+            }
+            baglanti.Close();   
         }
     }
 }

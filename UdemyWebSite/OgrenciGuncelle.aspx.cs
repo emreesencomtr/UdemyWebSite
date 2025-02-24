@@ -26,7 +26,7 @@ namespace UdemyWebSite
                     TxtOgrSoyad.Text = dt.OgrenciSec(id)[0].OGRSOYAD;
                     TxtOgrMail.Text = dt.OgrenciSec(id)[0].OGRMAIL;
                     TxtOgrTelefon.Text = dt.OgrenciSec(id)[0].OGRTELEFON;
-                    TxtOgrSifre.Text = dt.OgrenciSec(id)[0].OGRSIRFE;
+                    TxtOgrSifre.Text = dt.OgrenciSec(id)[0].OGRSIFRE;
                     TxtOgrFoto.Text = dt.OgrenciSec(id)[0].OGRFOTOGRAF;
                 }
                 catch (Exception)

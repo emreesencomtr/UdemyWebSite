@@ -11,7 +11,7 @@ namespace UdemyWebSite
 {
 
 
-    public partial class OgrenciDefault
+    public partial class OgrenciGuncelle2
     {
 
         /// <summary>
@@ -33,24 +33,6 @@ namespace UdemyWebSite
         protected global::System.Web.UI.WebControls.TextBox TxtNumara;
 
         /// <summary>
-        /// TxtAdSoyad control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtAdSoyad;
-
-        /// <summary>
-        /// TxtMail control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtMail;
-
-        /// <summary>
         /// TxtSifre control.
         /// </summary>
         /// <remarks>
@@ -60,13 +42,13 @@ namespace UdemyWebSite
         protected global::System.Web.UI.WebControls.TextBox TxtSifre;
 
         /// <summary>
-        /// TxtTelefon control.
+        /// TxtSifreTekrar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtTelefon;
+        protected global::System.Web.UI.WebControls.TextBox TxtSifreTekrar;
 
         /// <summary>
         /// Button1 control.
