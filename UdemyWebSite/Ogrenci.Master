@@ -93,7 +93,7 @@
                     </a>
                 </li>--%>
                 <li>
-                    <a href="NotListesi.aspx">
+                    <a href="OgrenciNotu.aspx">
                         <i class="glyphicon glyphicon-pencil"></i>
                         Sınav Notları
                     </a>

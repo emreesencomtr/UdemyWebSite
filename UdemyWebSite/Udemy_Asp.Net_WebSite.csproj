@@ -470,6 +470,7 @@
     <Content Include="OgrenciEkle.aspx" />
     <Content Include="OgrenciGuncelle.aspx" />
     <Content Include="OgrenciGuncelle2.aspx" />
+    <Content Include="OgrenciNotu.aspx" />
     <Content Include="OgrenciSil.aspx" />
     <Content Include="pexels-suzyhazelwood-1629236.jpg" />
     <Content Include="Dosyalar\StyleSheet1.css" />
@@ -628,6 +629,13 @@
     </Compile>
     <Compile Include="OgrenciGuncelle2.aspx.designer.cs">
       <DependentUpon>OgrenciGuncelle2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OgrenciNotu.aspx.cs">
+      <DependentUpon>OgrenciNotu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OgrenciNotu.aspx.designer.cs">
+      <DependentUpon>OgrenciNotu.aspx</DependentUpon>
     </Compile>
     <Compile Include="OgrenciSil.aspx.cs">
       <DependentUpon>OgrenciSil.aspx</DependentUpon>
