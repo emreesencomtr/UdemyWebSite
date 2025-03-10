@@ -87,7 +87,7 @@ FROM            TBLOGRENCILER</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="UdemyWebSiteDbConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="OgrenciBilgileriniGuncelle" Modifier="Public" Name="OgrenciBilgileriniGuncelle" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="OgrenciBilgileriniGuncelle">
+              <DbSource ConnectionRef="UdemyWebSiteDbConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="OgrenciBilgileriniGuncelle" Modifier="Public" Name="OgrenciBilgileriniGuncelle" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="OgrenciBilgileriniGuncelle">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE       TBLOGRENCILER
@@ -100,7 +100,7 @@ WHERE        (NUMARA = @NUMARA)</CommandText>
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
-              <DbSource ConnectionRef="UdemyWebSiteDbConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="OgrenciEkle" Modifier="Public" Name="OgrenciEkle" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="OgrenciEkle">
+              <DbSource ConnectionRef="UdemyWebSiteDbConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="OgrenciEkle" Modifier="Public" Name="OgrenciEkle" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="OgrenciEkle">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO TBLOGRENCILER
@@ -117,7 +117,7 @@ VALUES        (@OGRAD,@OGRSOYAD,@OGRTELEFON,@OGRMAIL,@OGRSIRFE,@OGRFOTOGRAF)</Co
                   </DbCommand>
                 </InsertCommand>
               </DbSource>
-              <DbSource ConnectionRef="UdemyWebSiteDbConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="OgrenciGuncelle" Modifier="Public" Name="OgrenciGuncelle" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="OgrenciGuncelle">
+              <DbSource ConnectionRef="UdemyWebSiteDbConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="OgrenciGuncelle" Modifier="Public" Name="OgrenciGuncelle" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="OgrenciGuncelle">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE       TBLOGRENCILER
@@ -135,7 +135,7 @@ WHERE        (OGRID = @OGRID)</CommandText>
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
-              <DbSource ConnectionRef="UdemyWebSiteDbConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="OgrenciSil" Modifier="Public" Name="OgrenciSil" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="OgrenciSil">
+              <DbSource ConnectionRef="UdemyWebSiteDbConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="OgrenciSil" Modifier="Public" Name="OgrenciSil" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="OgrenciSil">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM TBLOGRENCILER
@@ -319,6 +319,24 @@ FROM            TBLOGRETMENLER</CommandText>
               <Mapping SourceColumn="OGRENCIADSOYAD" DataSetColumn="OGRENCIADSOYAD" />
             </Mappings>
             <Sources>
+              <DbSource ConnectionRef="UdemyWebSiteDbConnectionString (Web.config)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByOgrenciNotu" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="OgrenciNotu" GeneratorSourceName="FillByOgrenciNotu" GetMethodModifier="Public" GetMethodName="OgrenciNotu" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="OgrenciNotu" UserSourceName="FillByOgrenciNotu">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        TBLNOTLAR.NOTID, TBLNOTLAR.OGRENCIID, TBLOGRENCILER.OGRAD + ' ' + TBLOGRENCILER.OGRSOYAD AS 'OGRENCIADSOYAD', TBLDERSLER.DERSAD, TBLNOTLAR.SINAV1, TBLNOTLAR.SINAV2, TBLNOTLAR.SINAV3, 
+                         TBLNOTLAR.ORTALAMA, TBLNOTLAR.DURUM
+FROM            TBLNOTLAR INNER JOIN
+                         TBLOGRENCILER ON TBLOGRENCILER.OGRID = TBLNOTLAR.OGRENCIID INNER JOIN
+                         TBLDERSLER ON TBLDERSLER.DERSID = TBLNOTLAR.DERSNID
+WHERE        (TBLNOTLAR.OGRENCIID =
+                             (SELECT        OGRID
+                               FROM            TBLOGRENCILER AS TBLOGRENCILER_1
+                               WHERE        (NUMARA = @NUMARA)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="NUMARA" ColumnName="" DataSourceName="" DataTypeServer="varchar(5)" DbType="AnsiString" Direction="Input" ParameterName="@NUMARA" Precision="0" Scale="0" Size="5" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
               <DbSource ConnectionRef="UdemyWebSiteDbConnectionString (Web.config)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillNotGetir2" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="NotGetir2" GeneratorSourceName="FillNotGetir2" GetMethodModifier="Public" GetMethodName="NotGetir2" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="NotGetir2" UserSourceName="FillNotGetir2">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
@@ -687,14 +705,14 @@ WHERE        (DERSNID = 3)</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="OGRSIFRE" msprop:Generator_UserColumnName="OGRSIFRE" msprop:Generator_ColumnPropNameInTable="OGRSIFREColumn" msprop:Generator_ColumnPropNameInRow="OGRSIFRE" msprop:Generator_ColumnVarNameInTable="columnOGRSIFRE" minOccurs="0">
+              <xs:element name="OGRSIFRE" msprop:Generator_ColumnPropNameInTable="OGRSIFREColumn" msprop:Generator_ColumnPropNameInRow="OGRSIFRE" msprop:Generator_UserColumnName="OGRSIFRE" msprop:Generator_ColumnVarNameInTable="columnOGRSIFRE" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="OGRFOTOGRAF" msprop:Generator_UserColumnName="OGRFOTOGRAF" msprop:Generator_ColumnPropNameInTable="OGRFOTOGRAFColumn" msprop:Generator_ColumnPropNameInRow="OGRFOTOGRAF" msprop:Generator_ColumnVarNameInTable="columnOGRFOTOGRAF" minOccurs="0">
+              <xs:element name="OGRFOTOGRAF" msprop:Generator_ColumnPropNameInTable="OGRFOTOGRAFColumn" msprop:Generator_ColumnPropNameInRow="OGRFOTOGRAF" msprop:Generator_UserColumnName="OGRFOTOGRAF" msprop:Generator_ColumnVarNameInTable="columnOGRFOTOGRAF" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
@@ -861,8 +879,8 @@ WHERE        (DERSNID = 3)</CommandText>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK_TBLDUYURULAR_TBLOGRETMENLER" msdata:parent="TBLOGRETMENLER" msdata:child="TBLDUYURULAR" msdata:parentkey="OGRTID" msdata:childkey="DUYURUOGRT" msprop:Generator_UserParentTable="TBLOGRETMENLER" msprop:Generator_UserChildTable="TBLDUYURULAR" msprop:Generator_RelationVarName="relationFK_TBLDUYURULAR_TBLOGRETMENLER" msprop:Generator_ChildPropName="GetTBLDUYURULARRows" msprop:Generator_ParentPropName="TBLOGRETMENLERRow" msprop:Generator_UserRelationName="FK_TBLDUYURULAR_TBLOGRETMENLER" />
-      <msdata:Relationship name="FK_TBLOGRETMENLER_TBLDERSLER" msdata:parent="TBLDERSLER" msdata:child="TBLOGRETMENLER" msdata:parentkey="DERSID" msdata:childkey="OGRBRANS" msprop:Generator_UserParentTable="TBLDERSLER" msprop:Generator_UserChildTable="TBLOGRETMENLER" msprop:Generator_RelationVarName="relationFK_TBLOGRETMENLER_TBLDERSLER" msprop:Generator_ChildPropName="GetTBLOGRETMENLERRows" msprop:Generator_ParentPropName="TBLDERSLERRow" msprop:Generator_UserRelationName="FK_TBLOGRETMENLER_TBLDERSLER" />
+      <msdata:Relationship name="FK_TBLDUYURULAR_TBLOGRETMENLER" msdata:parent="TBLOGRETMENLER" msdata:child="TBLDUYURULAR" msdata:parentkey="OGRTID" msdata:childkey="DUYURUOGRT" msprop:Generator_UserParentTable="TBLOGRETMENLER" msprop:Generator_UserChildTable="TBLDUYURULAR" msprop:Generator_RelationVarName="relationFK_TBLDUYURULAR_TBLOGRETMENLER" msprop:Generator_ChildPropName="GetTBLDUYURULARRows" msprop:Generator_UserRelationName="FK_TBLDUYURULAR_TBLOGRETMENLER" msprop:Generator_ParentPropName="TBLOGRETMENLERRow" />
+      <msdata:Relationship name="FK_TBLOGRETMENLER_TBLDERSLER" msdata:parent="TBLDERSLER" msdata:child="TBLOGRETMENLER" msdata:parentkey="DERSID" msdata:childkey="OGRBRANS" msprop:Generator_UserParentTable="TBLDERSLER" msprop:Generator_UserChildTable="TBLOGRETMENLER" msprop:Generator_RelationVarName="relationFK_TBLOGRETMENLER_TBLDERSLER" msprop:Generator_ChildPropName="GetTBLOGRETMENLERRows" msprop:Generator_UserRelationName="FK_TBLOGRETMENLER_TBLDERSLER" msprop:Generator_ParentPropName="TBLDERSLERRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

@@ -11,6 +11,9 @@ namespace UdemyWebSite
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            DataSet1TableAdapters.OgrNotlarTableAdapter dt = new DataSet1TableAdapters.OgrNotlarTableAdapter();
+            Repeater1.DataSource = dt.OgrenciNotu("1256");
+            Repeater1.DataBind();
 
         }
     }
