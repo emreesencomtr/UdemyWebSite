@@ -11,7 +11,7 @@ namespace UdemyWebSite
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            TxtNumara.Text = Request.QueryString["Numara"];
+            TxtNumara.Text = Session["Numara"].ToString();
             DataSet1TableAdapters.TBLOGRENCILERTableAdapter dt = new DataSet1TableAdapters.TBLOGRENCILERTableAdapter();
             TxtAdSoyad.Text= "Ad Soyad: "+ dt.OgrenciPaneliGetir(TxtNumara.Text)[0].OGRAD +" " + dt.OgrenciPaneliGetir(TxtNumara.Text)[0].OGRSOYAD;
             TxtMail.Text = "Mail: " + dt.OgrenciPaneliGetir(TxtNumara.Text)[0].OGRMAIL;

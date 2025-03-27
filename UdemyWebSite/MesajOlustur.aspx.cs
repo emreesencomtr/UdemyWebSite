@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace UdemyWebSite
 {
@@ -16,11 +11,9 @@ namespace UdemyWebSite
 
         protected void BtnGonder_Click(object sender, EventArgs e)
         {
-            DataSet1TableAdapters.TBLMESAJLARTableAdapter dt = new DataSet1TableAdapters.TBLMESAJLARTableAdapter();
-            dt.MesajGonder(TxtGonderen.Text, TxtAlici.Text, TxtMesajBaslik.Text, TxtMesajIcerik.Value,DateTime.Now);
-           
-          
-            Response.Redirect("GidenMesajlar.aspx");
+            DataSet1TableAdapters.TBLMESAJLARTableAdapter dt= new DataSet1TableAdapters.TBLMESAJLARTableAdapter();
+            dt.MesajGonder(TxtGonderen.Text, TxtAlici.Text, TxtMesajBaslik.Text, TxtMesajIcerik.Value, DateTime.Now);
+            Response.Redirect("GidenMesajlar.aspx"); 
         }
     }
 }

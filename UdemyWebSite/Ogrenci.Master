@@ -35,7 +35,7 @@
             <ul class="list-unstyled components">
 
                 <li>
-                    <a href="DersListesi.aspx">
+                    <a href="OgrenciDefault.aspx">
                         <i class="glyphicon glyphicon-user"></i>
                         Profilim
                     </a>
@@ -48,13 +48,13 @@
                     <ul class="collapse list-unstyled" id="homeSubmenu3">
 
                         <li>
-                            <a href="GelenMesajlar.aspx"><i class="glyphicon glyphicon-download"></i>Gelen Mesajlar</a>
+                            <a href="OgrenciGelenMesajlar.aspx"><i class="glyphicon glyphicon-download"></i>Gelen Mesajlar</a>
                         </li>
                         <li>
-                            <a href="GidenMesajlar.aspx"><i class="glyphicon glyphicon-upload"></i>Giden Mesajlar</a>
+                            <a href="OgrenciGidenMesajlar.aspx"><i class="glyphicon glyphicon-upload"></i>Giden Mesajlar</a>
                         </li>
                         <li>
-                            <a href="MesajOlustur.aspx"><i class="glyphicon glyphicon-edit"></i>Mesaj Oluştur</a>
+                            <a href="OgrenciMesajOlustur.aspx"><i class="glyphicon glyphicon-edit"></i>Mesaj Oluştur</a>
                         </li>
 
                     </ul>
@@ -109,7 +109,7 @@
      </a>
                 </li>
             </ul>
-            <div style="margin-left: 10px">Ad Soyad</div>
+            <div style="margin-left: 10px">Hoşgeldiniz</div>
             <div>
                 <br />
                 

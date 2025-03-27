@@ -28,7 +28,7 @@
                         <td><%#Eval("OGRSOYAD")%></td>
                         <td><%#Eval("OGRTELEFON")%></td>
                         <td><%#Eval("OGRMAIL")%></td>
-                        <td><%#Eval("OGRSIRFE")%></td>
+                        <td><%#Eval("OGRSIFRE")%></td>
                          <td>
                              <asp:HyperLink ID="HyperLink1" NavigateUrl='<%#"~/OgrenciSil.aspx?OGRID="+Eval("OGRID") %>' runat="server" CssClass=" btn btn-danger">SİL</asp:HyperLink>
                              <asp:HyperLink ID="HyperLink2" NavigateUrl='<%#"~/OgrenciGuncelle.aspx?OGRID="+Eval("OGRID") %>' runat="server" CssClass="btn btn-info">GÜNCELLE</asp:HyperLink>

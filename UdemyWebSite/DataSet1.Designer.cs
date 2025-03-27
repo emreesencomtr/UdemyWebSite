@@ -10,6 +10,8 @@
 
 #pragma warning disable 1591
 
+using System;
+
 namespace UdemyWebSite {
     
     
@@ -1187,6 +1189,8 @@ namespace UdemyWebSite {
             
             private global::System.Data.DataColumn columnOGRBRANS;
             
+            private global::System.Data.DataColumn columnOGRTSIFRE;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public TBLOGRETMENLERDataTable() {
@@ -1254,6 +1258,14 @@ namespace UdemyWebSite {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn OGRTSIFREColumn {
+                get {
+                    return this.columnOGRTSIFRE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1289,13 +1301,14 @@ namespace UdemyWebSite {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public TBLOGRETMENLERRow AddTBLOGRETMENLERRow(string OGRTADSOYAD, string OGRTFOTO, TBLDERSLERRow parentTBLDERSLERRowByFK_TBLOGRETMENLER_TBLDERSLER) {
+            public TBLOGRETMENLERRow AddTBLOGRETMENLERRow(string OGRTADSOYAD, string OGRTFOTO, TBLDERSLERRow parentTBLDERSLERRowByFK_TBLOGRETMENLER_TBLDERSLER, string OGRTSIFRE) {
                 TBLOGRETMENLERRow rowTBLOGRETMENLERRow = ((TBLOGRETMENLERRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         OGRTADSOYAD,
                         OGRTFOTO,
-                        null};
+                        null,
+                        OGRTSIFRE};
                 if ((parentTBLDERSLERRowByFK_TBLOGRETMENLER_TBLDERSLER != null)) {
                     columnValuesArray[3] = parentTBLDERSLERRowByFK_TBLOGRETMENLER_TBLDERSLER[0];
                 }
@@ -1332,6 +1345,7 @@ namespace UdemyWebSite {
                 this.columnOGRTADSOYAD = base.Columns["OGRTADSOYAD"];
                 this.columnOGRTFOTO = base.Columns["OGRTFOTO"];
                 this.columnOGRBRANS = base.Columns["OGRBRANS"];
+                this.columnOGRTSIFRE = base.Columns["OGRTSIFRE"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1345,6 +1359,8 @@ namespace UdemyWebSite {
                 base.Columns.Add(this.columnOGRTFOTO);
                 this.columnOGRBRANS = new global::System.Data.DataColumn("OGRBRANS", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnOGRBRANS);
+                this.columnOGRTSIFRE = new global::System.Data.DataColumn("OGRTSIFRE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOGRTSIFRE);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnOGRTID}, true));
                 this.columnOGRTID.AutoIncrement = true;
@@ -1678,6 +1694,13 @@ namespace UdemyWebSite {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public OgrNotlarRow FindByNOTID(int NOTID) {
+                return ((OgrNotlarRow)(this.Rows.Find(new object[] {
+                            NOTID})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
                 OgrNotlarDataTable cln = ((OgrNotlarDataTable)(base.Clone()));
                 cln.InitVars();
@@ -1728,10 +1751,14 @@ namespace UdemyWebSite {
                 base.Columns.Add(this.columnNOTID);
                 this.columnOGRENCIADSOYAD = new global::System.Data.DataColumn("OGRENCIADSOYAD", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnOGRENCIADSOYAD);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnNOTID}, true));
                 this.columnOGRENCIID.AllowDBNull = false;
                 this.columnÖĞRENCİ_AD_SOYAD.ReadOnly = true;
                 this.columnÖĞRENCİ_AD_SOYAD.MaxLength = 101;
                 this.columnDERSAD.MaxLength = 50;
+                this.columnNOTID.AllowDBNull = false;
+                this.columnNOTID.Unique = true;
                 this.columnOGRENCIADSOYAD.ReadOnly = true;
                 this.columnOGRENCIADSOYAD.MaxLength = 101;
             }
@@ -2471,6 +2498,11 @@ namespace UdemyWebSite {
                 xs.Add(dsSchema);
                 return type;
             }
+
+            internal void MesajGonder(string text1, string text2, string text3, string value, DateTime now)
+            {
+                throw new NotImplementedException();
+            }
         }
         
         /// <summary>
@@ -3124,6 +3156,22 @@ namespace UdemyWebSite {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string OGRTSIFRE {
+                get {
+                    try {
+                        return ((string)(this[this.tableTBLOGRETMENLER.OGRTSIFREColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'OGRTSIFRE\' in table \'TBLOGRETMENLER\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTBLOGRETMENLER.OGRTSIFREColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public TBLDERSLERRow TBLDERSLERRow {
                 get {
                     return ((TBLDERSLERRow)(this.GetParentRow(this.Table.ParentRelations["FK_TBLOGRETMENLER_TBLDERSLER"])));
@@ -3167,6 +3215,18 @@ namespace UdemyWebSite {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetOGRBRANSNull() {
                 this[this.tableTBLOGRETMENLER.OGRBRANSColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsOGRTSIFRENull() {
+                return this.IsNull(this.tableTBLOGRETMENLER.OGRTSIFREColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetOGRTSIFRENull() {
+                this[this.tableTBLOGRETMENLER.OGRTSIFREColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3322,12 +3382,7 @@ namespace UdemyWebSite {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public int NOTID {
                 get {
-                    try {
-                        return ((int)(this[this.tableOgrNotlar.NOTIDColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'NOTID\' in table \'OgrNotlar\' is DBNull.", e);
-                    }
+                    return ((int)(this[this.tableOgrNotlar.NOTIDColumn]));
                 }
                 set {
                     this[this.tableOgrNotlar.NOTIDColumn] = value;
@@ -3432,18 +3487,6 @@ namespace UdemyWebSite {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetDURUMNull() {
                 this[this.tableOgrNotlar.DURUMColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsNOTIDNull() {
-                return this.IsNull(this.tableOgrNotlar.NOTIDColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetNOTIDNull() {
-                this[this.tableOgrNotlar.NOTIDColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5664,14 +5707,9 @@ INNER JOIN TBLDERSLER ON TBLDERSLER.DERSID= TBLNOTLAR.DERSNID WHERE NOTID=@NOTID
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillNotGetir2(DataSet1.OgrNotlarDataTable dataTable, global::System.Nullable<int> NOTID) {
+        public virtual int FillNotGetir2(DataSet1.OgrNotlarDataTable dataTable, int NOTID) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
-            if ((NOTID.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(NOTID.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(NOTID));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -5683,14 +5721,9 @@ INNER JOIN TBLDERSLER ON TBLDERSLER.DERSID= TBLNOTLAR.DERSNID WHERE NOTID=@NOTID
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DataSet1.OgrNotlarDataTable NotGetir2(global::System.Nullable<int> NOTID) {
+        public virtual DataSet1.OgrNotlarDataTable NotGetir2(int NOTID) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
-            if ((NOTID.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(NOTID.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(NOTID));
             DataSet1.OgrNotlarDataTable dataTable = new DataSet1.OgrNotlarDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -5700,7 +5733,7 @@ INNER JOIN TBLDERSLER ON TBLDERSLER.DERSID= TBLNOTLAR.DERSNID WHERE NOTID=@NOTID
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int NotGuncelle(global::System.Nullable<byte> SINAV1, global::System.Nullable<byte> SINAV2, global::System.Nullable<byte> SINAV3, global::System.Nullable<decimal> ORTALAMA, global::System.Nullable<bool> DURUM, global::System.Nullable<int> NOTID) {
+        public virtual int NotGuncelle(global::System.Nullable<byte> SINAV1, global::System.Nullable<byte> SINAV2, global::System.Nullable<byte> SINAV3, global::System.Nullable<decimal> ORTALAMA, global::System.Nullable<bool> DURUM, int NOTID) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
             if ((SINAV1.HasValue == true)) {
                 command.Parameters[0].Value = ((byte)(SINAV1.Value));
@@ -5732,12 +5765,7 @@ INNER JOIN TBLDERSLER ON TBLDERSLER.DERSID= TBLNOTLAR.DERSNID WHERE NOTID=@NOTID
             else {
                 command.Parameters[4].Value = global::System.DBNull.Value;
             }
-            if ((NOTID.HasValue == true)) {
-                command.Parameters[5].Value = ((int)(NOTID.Value));
-            }
-            else {
-                command.Parameters[5].Value = global::System.DBNull.Value;
-            }
+            command.Parameters[5].Value = ((int)(NOTID));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -6343,7 +6371,7 @@ INNER JOIN TBLDERSLER ON TBLDERSLER.DERSID= TBLNOTLAR.DERSNID WHERE NOTID=@NOTID
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[8];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        MESAJID, GONDEREN, ALICI, BASLIK, ICERIK, TARIH\r\nFROM            TB" +
@@ -6351,19 +6379,49 @@ INNER JOIN TBLDERSLER ON TBLDERSLER.DERSID= TBLNOTLAR.DERSNID WHERE NOTID=@NOTID
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT        ALICI, BASLIK, GONDEREN, ICERIK, MESAJID, TARIH\r\nFROM            TB" +
-                "LMESAJLAR\r\nWHERE        (GONDEREN = \'0001\')";
+            this._commandCollection[1].CommandText = "SELECT        MESAJID, GONDEREN, ALICI, BASLIK, ICERIK, TARIH\r\nFROM            TB" +
+                "LMESAJLAR\r\nWHERE        (ALICI = \'0001\')";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "INSERT INTO TBLMESAJLAR\r\n                         (GONDEREN, ALICI, BASLIK, ICERI" +
-                "K, TARIH)\r\nVALUES        (@GONDEREN,@ALICI,@BASLIK,@ICERIK,@TARIH)";
+            this._commandCollection[2].CommandText = "SELECT        MESAJID, GONDEREN, ALICI, BASLIK, ICERIK, TARIH\r\nFROM            TB" +
+                "LMESAJLAR\r\nWHERE        (ALICI = \'0001\')";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@GONDEREN", global::System.Data.SqlDbType.VarChar, 5, global::System.Data.ParameterDirection.Input, 0, 0, "GONDEREN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ALICI", global::System.Data.SqlDbType.VarChar, 5, global::System.Data.ParameterDirection.Input, 0, 0, "ALICI", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BASLIK", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "BASLIK", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ICERIK", global::System.Data.SqlDbType.VarChar, 500, global::System.Data.ParameterDirection.Input, 0, 0, "ICERIK", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TARIH", global::System.Data.SqlDbType.SmallDateTime, 4, global::System.Data.ParameterDirection.Input, 0, 0, "TARIH", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "SELECT        MESAJID, GONDEREN, ALICI, BASLIK, ICERIK, TARIH\r\nFROM            TB" +
+                "LMESAJLAR\r\nWHERE        (ALICI = \'0001\')";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = @"SELECT        TBLOGRENCILER.OGRAD + '' + TBLOGRENCILER.OGRSOYAD AS 'ALICI', TBLMESAJLAR.BASLIK, TBLMESAJLAR.ICERIK, TBLMESAJLAR.TARIH
+FROM            TBLMESAJLAR INNER JOIN
+                         TBLOGRENCILER ON TBLMESAJLAR.ALICI = TBLOGRENCILER.NUMARA
+WHERE        (TBLMESAJLAR.GONDEREN = TBLMESAJLAR.GONDEREN)";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[5].Connection = this.Connection;
+            this._commandCollection[5].CommandText = "SELECT        ALICI, BASLIK, GONDEREN, ICERIK, MESAJID, TARIH\r\nFROM            TB" +
+                "LMESAJLAR\r\nWHERE        (GONDEREN = \'0001\')";
+            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[6].Connection = this.Connection;
+            this._commandCollection[6].CommandText = @"SELECT        TBLOGRENCILER.OGRAD + '' + TBLOGRENCILER.OGRSOYAD AS 'GÖNDEREN', TBLMESAJLAR.BASLIK, TBLMESAJLAR.ICERIK, TBLMESAJLAR.TARIH
+FROM            TBLMESAJLAR INNER JOIN
+                         TBLOGRENCILER ON TBLMESAJLAR.GONDEREN = TBLOGRENCILER.NUMARA
+WHERE        (TBLMESAJLAR.ALICI = @ALICI)";
+            this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ALICI", global::System.Data.SqlDbType.VarChar, 5, global::System.Data.ParameterDirection.Input, 0, 0, "ALICI", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[7].Connection = this.Connection;
+            this._commandCollection[7].CommandText = "INSERT INTO TBLMESAJLAR\r\n                         (GONDEREN, ALICI, BASLIK, ICERI" +
+                "K, TARIH)\r\nVALUES        (@GONDEREN,@ALICI,@BASLIK,@ICERIK,@TARIH)";
+            this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@GONDEREN", global::System.Data.SqlDbType.VarChar, 5, global::System.Data.ParameterDirection.Input, 0, 0, "GONDEREN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ALICI", global::System.Data.SqlDbType.VarChar, 5, global::System.Data.ParameterDirection.Input, 0, 0, "ALICI", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BASLIK", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "BASLIK", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ICERIK", global::System.Data.SqlDbType.VarChar, 500, global::System.Data.ParameterDirection.Input, 0, 0, "ICERIK", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TARIH", global::System.Data.SqlDbType.SmallDateTime, 4, global::System.Data.ParameterDirection.Input, 0, 0, "TARIH", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6394,7 +6452,7 @@ INNER JOIN TBLDERSLER ON TBLDERSLER.DERSID= TBLNOTLAR.DERSNID WHERE NOTID=@NOTID
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByGidenMesajlar(DataSet1.TBLMESAJLARDataTable dataTable) {
+        public virtual int FillBy(DataSet1.TBLMESAJLARDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -6407,8 +6465,140 @@ INNER JOIN TBLDERSLER ON TBLDERSLER.DERSID= TBLNOTLAR.DERSNID WHERE NOTID=@NOTID
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DataSet1.TBLMESAJLARDataTable OgretmenGidenMesajlar() {
+        public virtual DataSet1.TBLMESAJLARDataTable GetDataBy1() {
             this.Adapter.SelectCommand = this.CommandCollection[1];
+            DataSet1.TBLMESAJLARDataTable dataTable = new DataSet1.TBLMESAJLARDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy1(DataSet1.TBLMESAJLARDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DataSet1.TBLMESAJLARDataTable GetDataBy2() {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            DataSet1.TBLMESAJLARDataTable dataTable = new DataSet1.TBLMESAJLARDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy2(DataSet1.TBLMESAJLARDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DataSet1.TBLMESAJLARDataTable GetDataBy3() {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            DataSet1.TBLMESAJLARDataTable dataTable = new DataSet1.TBLMESAJLARDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByGidenKutusuOgrenci(DataSet1.TBLMESAJLARDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[4];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DataSet1.TBLMESAJLARDataTable OgrenciGidenKutusu1() {
+            this.Adapter.SelectCommand = this.CommandCollection[4];
+            DataSet1.TBLMESAJLARDataTable dataTable = new DataSet1.TBLMESAJLARDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByGidenMesajlar(DataSet1.TBLMESAJLARDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[5];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DataSet1.TBLMESAJLARDataTable OgretmenGidenMesajlar() {
+            this.Adapter.SelectCommand = this.CommandCollection[5];
+            DataSet1.TBLMESAJLARDataTable dataTable = new DataSet1.TBLMESAJLARDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByOgrenciGelenKutusu1(DataSet1.TBLMESAJLARDataTable dataTable, string ALICI) {
+            this.Adapter.SelectCommand = this.CommandCollection[6];
+            if ((ALICI == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(ALICI));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DataSet1.TBLMESAJLARDataTable OgrenciGelenKutusu1(string ALICI) {
+            this.Adapter.SelectCommand = this.CommandCollection[6];
+            if ((ALICI == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(ALICI));
+            }
             DataSet1.TBLMESAJLARDataTable dataTable = new DataSet1.TBLMESAJLARDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -6573,7 +6763,7 @@ INNER JOIN TBLDERSLER ON TBLDERSLER.DERSID= TBLNOTLAR.DERSNID WHERE NOTID=@NOTID
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
         public virtual int MesajGonder(string GONDEREN, string ALICI, string BASLIK, string ICERIK, global::System.Nullable<global::System.DateTime> TARIH) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[7];
             if ((GONDEREN == null)) {
                 command.Parameters[0].Value = global::System.DBNull.Value;
             }
